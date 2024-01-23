@@ -1,0 +1,5 @@
+<img id="image1" width="50" height="50" 
+src="http://lorempixel.com/output/sports-q-c-50-50-1.jpg" 
+onload="document.getElementById('image2').src=this.src">
+
+<img id="image2" width="50" height="50" src="">
