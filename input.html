@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Image Gallery</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /* overflow: auto; */
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid grid-cols-3 gap-5 mt-8 m-2 md:m-10" id="image-top">
+        <img src="./Images/img1.avif" alt="One" class="h-5/6 w-svw md:h-4/6 images" onclick="openModal(this)">
+        <img src="./Images/img2.avif" alt="Two" class="h-5/6 w-svw md:h-4/6 images" onclick="openModal(this)">
+        <img src="./Images/img3.avif" alt="Three" class="h-5/6 w-svw md:h-4/6 images" onclick="openModal(this)">
+    </div>
+
+    <div class="modal" id="imageModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    <script>
+        function openModal(imgElement) {
+            document.getElementById('modalImage').src = imgElement.src;
+            document.getElementById('imageModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>
