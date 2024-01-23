@@ -30,7 +30,7 @@
 
         .close-full {
             z-index: 10;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.7);
             position: fixed;
             top: 0;
             left: 0;
@@ -71,7 +71,7 @@
 
             <span class="float-right text-3xl cursor-pointer close-button mr-3" id="">x</span>
             <br>
-            <img class="absolute m-5 md:ml-16" alt="One" style="width: 90%;height: 90%;">
+            <img class="absolute m-5 md:ml-16" src="" id="zoom-img" alt="One" style="width: 90%;height: 90%;">
 
         </div>
 
@@ -91,10 +91,16 @@
             var closeButton = document.querySelector('.close-button')
             // close full div
             var closeFull = document.querySelector('.close-full')
+            var zoomImage=document.getElementById("zoom-img")
 
+            imgOne.addEventListener('click', function () {
 
-            imgOne.addEventListener('click', function (src) {
+                
+                zoomImage.src="./Images/img1.avif"
+                
 
+                // var zoomImage=document.getElementById("zoom-img")
+                // zoomImage.setAttribute.src="./Images/img1.avif"
                 // imgOne=event.target
                 // console.log(event)
                 closeFull.style.display = 'block'
@@ -107,8 +113,8 @@
 
             imgTwo.addEventListener('click', function () {
 
-                // imgOne=event.target
-                // console.log(event)
+                zoomImage.src="./Images/img2.avif"
+
                 closeFull.style.display = 'block'
 
                 topImage.style.display = "none"
@@ -118,8 +124,9 @@
             //img 3
             imgThree.addEventListener('click', function () {
 
-                // imgOne=event.target
-                // console.log(event)
+                zoomImage.src="./Images/img3.avif"
+                
+                
                 closeFull.style.display = 'block'
 
                 topImage.style.display = "none"
